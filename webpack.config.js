@@ -14,7 +14,13 @@ module.exports = {
   module: {
     rules: [{ test: /\.tsx?$/, loader: 'ts-loader' }]
   },
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 500
+  },
   plugins: [
-    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/index.html')
+    })
   ]
 }
